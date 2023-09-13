@@ -2,9 +2,10 @@ import argparse
 
 from fastreid.config import get_cfg
 
+# 获取默认的config参数, 统一的默认入口, 避免每次都要从命令行里面传参数进来
 def getConfig():
     parser = argparse.ArgumentParser(description="Feature extraction with reid models")
-    parser.add_argument("--config-file", metavar="FILE", default="../configs/Market1501/sbs_R101-ibn.yml")
+    parser.add_argument("--config-file", metavar="FILE", default="./configs/Market1501/sbs_R101-ibn.yml")
     parser.add_argument("--opts", default=["MODEL.WEIGHTS", "./models/market_sbs_R101-ibn.pth"], nargs=argparse.REMAINDER,)
 
     args = parser.parse_args()
@@ -19,4 +20,4 @@ def getConfig():
 
 if __name__ == "__main__":
     args = getConfig()
-    print("hs")
+    print("Test config file")
